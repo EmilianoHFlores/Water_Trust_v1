@@ -1,6 +1,7 @@
 library(tidyverse)
 library(ggplot2)
 library(readr)
+library(googledrive)
 
 nodeData <- read.csv("https://raw.githubusercontent.com/EmilianoHFlores/Water_Trust_v1/main/CSV%20Tests/Expected_vs_Detected.csv?token=GHSAT0AAAAAABZFJPKSGFOJKFPOP5GHG4X2YZPMWEA")
 
@@ -8,6 +9,9 @@ x <- seq(1:200)
 
 y1=nodeData$EXPECTED
 y2=nodeData$DETECTED
+
+png(file="saving_plot1.png", width=600, height=350)
+
 
 plot(x, y1, type = "l", ylim=c(0,100))
 lines(x, y2, type = "l")
@@ -46,3 +50,7 @@ for (i in 1:(length(time)-1)){
 
 lines(x, y1)
 lines(x, y2)
+
+dev.off()
+
+
