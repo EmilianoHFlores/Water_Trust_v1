@@ -53,4 +53,9 @@ lines(x, y2)
 
 dev.off()
 
+drivefind <- drive_find(n_max = 30)
 
+drive_upload("saving_plot1.png",
+             path = "Water_Trust_Data",
+             name = "saving_plot.png",
+             overwrite = TRUE)
